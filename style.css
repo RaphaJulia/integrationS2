@@ -1,0 +1,123 @@
+:root {
+  /* Couleurs */
+  --color-primary: #e62d2d;
+  --color-text: #1f2937;
+  --color-text-light: #ffeede;
+  --color-bg: #cacaca;
+  --color-bg-alt: #f7e689;
+  --color-bg-card: #e2e2e2;
+
+  /* Espacements */
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 4rem;
+
+  /* Typographie */
+  --font-base: system-ui, -apple-system, sans-serif;
+  --line-height: 1.6;
+}
+
+body {
+  font-family: var(--font-base);
+  line-height: var(--line-height);
+  color: var(--color-text);
+  margin: 0;
+  padding: 0 7vw;
+  background-color: var(--color-bg);
+}
+
+h1, h2, h3 {
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+a:hover {
+  font-weight: bolder;
+  text-decoration: underline;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4vw;
+  background-color: var(--color-bg-alt);
+  font-size: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 50px;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 200px;
+  margin-top: var(--space-lg);
+}
+
+.cta {
+  border: 3px solid var(--color-text);
+  border-radius: 1rem;
+  padding: 1vh 2vw;
+  background-color: var(--color-primary);
+  color: var(--color-text);
+}
+
+.cta:hover {
+  text-decoration: none;
+  background-color: var(--color-bg-alt);
+  color: var(--color-text);
+  transition: 0.3s;
+}
+
+.projets {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-lg);
+  margin: var(--space-xl) 0;
+}
+
+.projets article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid var(--color-text);
+  border-radius: 0.5rem;
+  padding: var(--space-sm);
+}
+
+.carte {
+  background-color: var(--color-bg-card);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.carte:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 600px) {
+  header {
+    font-size: 18px;
+  }
+
+  .hero {
+    line-height: 1;
+    min-height: 200px;
+  }
+
+  .projets {
+    margin: var(--space-md) 0;
+  }
+}
